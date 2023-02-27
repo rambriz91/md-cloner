@@ -71,7 +71,7 @@ inquirer
     },
 ])
 .then((data) =>
-fs.writeToFile('README.md', questions(data), (err) => {
+fs.writeToSync('README.md', questions(data), (err) => {
     err ? console.log(err) : console.log('Sucess!')
 }));
 
