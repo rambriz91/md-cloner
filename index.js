@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const badges = require('./Develop/utils/badges')
 // TODO: Create an array of questions for user input
 const questions = ({title, description, installation, usage, contributing, tests, license, github, linkedIn}) =>
 `# ${title}
@@ -22,9 +23,7 @@ ${license}
 ## Questions
 
 -   ${github}
--   ${linkedIn}
-
-## License;`
+-   ${linkedIn}`
 
 // TODO: Create a function to write README file
 inquirer
@@ -71,7 +70,11 @@ inquirer
         name: 'linkedIn',
     },
 ])
-function writeToFile(fileName, data) {}
+.then((data) =>
+fs.writeToFile('README.md', questions(data), (err) => {
+    err ? console.log(err) : console.log('Sucess!')
+}));
+
 
 // TODO: Create a function to initialize app
 function init() {}
