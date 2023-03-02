@@ -3,13 +3,22 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const badges = require('./Develop/utils/badges')
 // TODO: Create an array of questions for user input
-const questions = ({title, description, installation, usage, contributing, tests, license, github, linkedIn}) =>
-`# ${title}
+const questions = ({title, description, installation, usage, contributing, tests, license, github, email}) =>
+`# ${title} 
+${badges}
 
 ## Description
-
 ${description}
-
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Badges](#badges)
+- [Features](#features)
+- [Contributers](#contributers)
+- [Test](#test)
+- [Questions](#questions)
+- [License](#license)
 ## Installation
 ${installation}
 ## Usage
@@ -21,11 +30,12 @@ ${tests}
 ## License
 ${license}
 ## Questions
+For any additional questions please feel free to contact me at one of the following links below.
+-   Github Username:${github}
+-   https://github.com/${github}
+-   Email:${email}`
 
--   ${github}
--   ${linkedIn}`
-
-// TODO: Create a function to write README file
+// Prompts
 inquirer
 .prompt ([
     {
@@ -42,6 +52,11 @@ inquirer
         type:'input',
         message: 'Provide us with instructions for installation.',
         name: 'installation',
+    },
+    {
+        type:'input',
+        message: 'Provide us with instructions for usage.',
+        name: 'usage',
     },
     {
         type:'input',
@@ -66,18 +81,11 @@ inquirer
     },
     {
         type:'input',
-        message: 'Please provide your linkedIn username.',
-        name: 'linkedIn',
+        message: 'Please provide your email.',
+        name: 'email',
     },
 ])
 .then((data) =>
-fs.writeToSync('README.md', questions(data), (err) => {
+fs.writeFile('README.md', questions(data), (err) => {
     err ? console.log(err) : console.log('Sucess!')
 }));
-
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
