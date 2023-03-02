@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const badges = require('./Develop/utils/badges');
+const generateMarkdown =require('./Develop/utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = ({title, description, installation, usage, contributing, tests, license, github, email}) =>
 `# ${title} 
@@ -82,10 +82,11 @@ inquirer
         name: 'email',
     },
 ])
-.then((data) => 
+.then((data) => {
+    renderLicenseBadge(questions[6]),
     fs.writeFile('README.md', questions(data), (err) => {
     err ? console.log(err) : console.log('Success!')
-    }));
+    })});
 
 function renderLicenseBadge(license) {
     let badge ='';
@@ -105,3 +106,8 @@ function renderLicenseBadge(license) {
       badge = ''
     }
   }
+
+  //function init() {
+  //  inquirer.prompt(questions)
+  //  .then (answers =>)
+ // }
