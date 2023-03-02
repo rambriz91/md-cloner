@@ -1,24 +1,21 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const badges = require('./Develop/utils/badges')
+const badges = require('./Develop/utils/badges');
 // TODO: Create an array of questions for user input
 const questions = ({title, description, installation, usage, contributing, tests, license, github, email}) =>
 `# ${title} 
-${badges}
+${badge}
 
 ## Description
 ${description}
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
-- [Badges](#badges)
-- [Features](#features)
-- [Contributers](#contributers)
-- [Test](#test)
-- [Questions](#questions)
+- [Contributing](#contributing)
+- [Tests](#tests)
 - [License](#license)
+- [Questions](#questions)
 ## Installation
 ${installation}
 ## Usage
@@ -85,7 +82,26 @@ inquirer
         name: 'email',
     },
 ])
-.then((data) =>
-fs.writeFile('README.md', questions(data), (err) => {
+.then((data) => 
+    fs.writeFile('README.md', questions(data), (err) => {
     err ? console.log(err) : console.log('Sucess!')
-}));
+    }));
+
+function renderLicenseBadge(license) {
+    let badge ='';
+    if (license === MIT) {
+      badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+    }
+    else if (license === IBM) {
+      badge = '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
+    }
+    else if (license === ISC) { 
+      badge = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
+    }
+    else if (license === Mozilla) {
+      badge = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
+    }
+    else { 
+      badge = ''
+    }
+  }

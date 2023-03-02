@@ -1,22 +1,30 @@
-# NA 
-[object Object]
+# Readme Generator 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-
-
-
+blahalhalhalhal
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Badges](#badges)
+- [Features](#features)
+- [Contributers](#contributers)
+- [Test](#test)
+- [Questions](#questions)
+- [License](#license)
 ## Installation
-NA
+N/A
 ## Usage
-undefined
+Dont know
 ## Contributing
-NA
+nobody
 ## Tests
-NA
+LKOL
 ## License
 MIT
 ## Questions
-
--   Github Username:NA
--   https://github.com/NA
--   Email:NA
+For any additional questions please feel free to contact me at one of the following links below.
+-   Github Username:rambriz91
+-   https://github.com/rambriz91
+-   Email:rambriz91@gmail.com
