@@ -84,8 +84,8 @@ inquirer
     },
 ])
 .then((data) => {
-    data.badge = generateMarkdown.renderLicenseBadge(data.license),
-    data.licenseTxt = generateMarkdown.renderLicenseText(data.license),
+    data.badge = renderLicenseBadge(data.license),
+    data.licenseTxt = renderLicenseText(data.license),
     fs.writeFile('README.md', questions(data), (err) => {
     err ? console.log(err) : console.log('Success!')
     })});

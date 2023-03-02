@@ -1,6 +1,6 @@
 
 
-module.exports = [ renderLicenseBadge(), renderLicenseText()]
+module.exports = [ 
 
 
 // Render License Badge Function with link
@@ -23,7 +23,7 @@ function renderLicenseBadge(license) {
     badge = ''
   }
   return badge;
-};
+},
 
 //License Text Function
 function renderLicenseText(license) {
@@ -42,3 +42,4 @@ function renderLicenseText(license) {
     licenseTxt = 'This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0'
   }
 }
+]
