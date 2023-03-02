@@ -84,7 +84,7 @@ inquirer
 ])
 .then((data) => 
     fs.writeFile('README.md', questions(data), (err) => {
-    err ? console.log(err) : console.log('Sucess!')
+    err ? console.log(err) : console.log('Success!')
     }));
 
 function renderLicenseBadge(license) {
