@@ -20,6 +20,7 @@ NA
 NA
 ## License
 Mozilla
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0
 ## Questions
 For any additional questions please feel free to contact me at one of the following links below.
 -   Github Username:rambriz91
