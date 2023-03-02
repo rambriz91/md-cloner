@@ -86,6 +86,6 @@ inquirer
 .then((data) => {
     data.badge = renderLicenseBadge(data.license),
     data.licenseTxt = renderLicenseText(data.license),
-    fs.writeFile('README.md', questions(data), (err) => {
+    fs.writeFile('demo-README.md', questions(data), (err) => {
     err ? console.log(err) : console.log('Success!')
     })});
