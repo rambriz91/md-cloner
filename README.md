@@ -1,28 +1,25 @@
 # Readme Generator 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 ## Description
-blahalhalhalhal
+NA
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
-- [Badges](#badges)
-- [Features](#features)
-- [Contributers](#contributers)
-- [Test](#test)
-- [Questions](#questions)
+- [Contributing](#contributing)
+- [Tests](#tests)
 - [License](#license)
+- [Questions](#questions)
 ## Installation
-N/A
+NA
 ## Usage
-Dont know
+NA
 ## Contributing
-nobody
+NA
 ## Tests
-LKOL
+NA
 ## License
-MIT
+Mozilla
 ## Questions
 For any additional questions please feel free to contact me at one of the following links below.
 -   Github Username:rambriz91

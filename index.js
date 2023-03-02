@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown =require('./Develop/utils/generateMarkdown');
 // TODO: Create an array of questions for user input
-const questions = ({title, description, installation, usage, contributing, tests, license, github, email}) =>
+const questions = ({title, description, installation, usage, contributing, tests, license, github, email, badge}) =>
 `# ${title} 
 ${badge}
 
@@ -83,28 +83,29 @@ inquirer
     },
 ])
 .then((data) => {
-    renderLicenseBadge(questions[6]),
+    data.badge = renderLicenseBadge(data.license),
     fs.writeFile('README.md', questions(data), (err) => {
     err ? console.log(err) : console.log('Success!')
     })});
 
 function renderLicenseBadge(license) {
     let badge ='';
-    if (license === MIT) {
+    if (license === 'MIT') {
       badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
     }
-    else if (license === IBM) {
+    else if (license === 'IBM') {
       badge = '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
     }
-    else if (license === ISC) { 
+    else if (license === 'ISC') { 
       badge = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
     }
-    else if (license === Mozilla) {
+    else if (license === 'Mozilla') {
       badge = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
     }
     else { 
       badge = ''
     }
+    return badge;
   }
 
   //function init() {
